@@ -1,0 +1,481 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #bbb;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+}
+
+header .page_link_area {
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+header .page_link_area:hover {
+  text-decoration: underline;
+}
+
+header .page_link_area .page_link {
+  color: #000;
+  line-height: 80px;
+  text-decoration: none;
+}
+
+header .active_page_link_area {
+  border-bottom: 2px solid #22f;
+}
+
+header .active_page_link_area .active_page_link {
+  color: #22f;
+}
+
+header .start_btn_area {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 21px;
+}
+
+.header_detail_area,
+.header_detail_open_icon,
+.header_detail_close_icon {
+  display: none;
+}
+
+.site_icon {
+  width: 50px;
+  height: 50px;
+  margin: 15px 20px 15px 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.start_modal {
+  width: 600px;
+  margin-left: -300px;
+  padding: 0 60px;
+  border-radius: 20px;
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  z-index: 3;
+  background-color: #fefefe;
+}
+
+.start_modal .start_modal_head {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.start_modal .start_modal_head .close_btn,
+.start_modal .start_modal_head h1 {
+  line-height: 100px;
+}
+
+.start_modal .start_modal_head .close_btn {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.start_modal .start_modal_head h1 {
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+.start_modal .regions,
+.start_modal .email_address,
+.start_modal .password,
+.start_modal .sign_up_btn,
+.start_modal .login_btn {
+  width: 100%;
+}
+
+.start_modal .email_address,
+.start_modal .password {
+  margin-bottom: 5px;
+  padding: 3px 0;
+}
+
+.start_modal .sign_up_btn,
+.start_modal .login_btn {
+  margin: 15px 0 5px;
+}
+
+.start_modal .email_address_text,
+.start_modal .form_change_text,
+.start_modal .password_text {
+  font-size: 0.8em;
+}
+
+.start_modal .form_change_text {
+  margin-bottom: 30px;
+}
+
+.start_modal .form_change_text .form_change_btn {
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+}
+
+.start_modal .sign_up_modal .regions {
+  margin: 20px 0 10px;
+  padding: 5px 0;
+}
+
+.start_modal .login_modal {
+  display: none;
+}
+
+.start_modal .login_modal .email_address_text,
+.start_modal .login_modal .password_text {
+  margin: 10px 0 5px;
+}
+
+.start_modal .login_modal .password {
+  margin-bottom: 20px;
+}
+
+#modal_overlay {
+  z-index: 2;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main_image_space .main_image_area {
+  width: 100%;
+  height: 500px;
+  margin-top: 80px;
+  background-color: #ddd;
+  background-image: url(../image/board-game.jpg);
+  background-size: cover;
+}
+
+.main_image_space .main_image_area .input_form_area {
+  width: 470px;
+  height: 400px;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  border-radius: 10px;
+}
+
+.main_image_space .main_image_area .input_form_area h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.main_image_space .main_image_area .input_form_area h2 {
+  font-size: 1.2em;
+  margin-top: 40px;
+}
+
+.main_image_space .main_image_area .input_form_area .regions,
+.main_image_space .main_image_area .input_form_area .users_number {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.main_image_space .main_image_area .input_form_area .start_btn {
+  width: 100%;
+}
+
+.site_main_area {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.site_main_area .site_info_head {
+  margin-bottom: 70px;
+  padding-top: 30px;
+  font-size: 3.5em;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid;
+}
+
+.site_main_area .site_info_area {
+  margin: 50px auto 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.site_main_area .site_info_area .site_info_item {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.site_main_area .site_info_area .site_info_item h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.site_main_area .site_info_area .site_info_item p {
+  color: #777;
+  line-height: 2;
+}
+
+.site_main_area .step_area .site_info_item {
+  width: 30%;
+}
+
+.site_main_area .check_mark {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 15px;
+}
+
+.site_main_area .user_feedback .text_area {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.site_main_area .user_feedback .text_area h1 {
+  font-size: 2em;
+  color: #555;
+}
+
+.site_main_area .user_feedback .text_area p {
+  color: #555;
+}
+
+.site_main_area .site_info_image {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.site_main_area .check_list_area .check_list ul li {
+  margin-bottom: 10px;
+  list-style-type: none;
+  color: #777;
+}
+
+.site_main_area .check_list_area .check_list ul li .check_mark {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.site_main_area .eye_catch_area .site_info_image {
+  width: 100%;
+}
+
+.site_main_area .ques_area {
+  width: 90%;
+  display: block;
+}
+
+.site_main_area .ques_area .ques_item {
+  width: 100%;
+  margin: 0 auto 5px;
+  padding: 10px 0;
+  border-bottom: 1px solid #999;
+  font-size: 1.1em;
+}
+
+.site_main_area .ques_area .ques_item .ques_item_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #333;
+  cursor: pointer;
+}
+
+.site_main_area .ques_area .ques_item .ques_item_head p {
+  width: 95%;
+  padding-top: 20px;
+}
+
+.site_main_area .ques_area .ques_item .ques_item_head .open_icon {
+  width: 5%;
+  font-size: 2em;
+  text-align: right;
+}
+
+.site_main_area .ques_area .ques_item .ques_answer {
+  margin: 20px 0;
+  display: none;
+  color: #777;
+}
+
+.site_main_area .service_detail_area .site_info_head {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.site_main_area .service_detail_area .site_info_area {
+  margin-top: 10px;
+}
+
+.site_main_area .service_detail_area .site_info_area .site_info_item {
+  width: 30%;
+}
+
+.site_main_area .service_detail_area .site_info_area .site_info_item .site_info_image {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.site_main_area .service_detail_area .site_info_area .site_info_item h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.site_main_area .service_detail_area .site_info_area .site_info_item p {
+  color: #777;
+  margin-bottom: 3px;
+}
+
+.site_main_area .service_detail_area .site_info_area .site_info_item .detail_link {
+  color: #088;
+}
+
+.start_eye_catch_area {
+  width: 86%;
+  height: 320px;
+  margin: 0 auto 70px;
+  background-color: #088;
+  background-image: url(../image/chess4.jpg);
+  background-size: cover;
+}
+
+.start_eye_catch_area h1 {
+  color: #fff;
+  font-size: 4em;
+  font-weight: bold;
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+
+.start_eye_catch_area .start_btn {
+  position: relative;
+  top: 70px;
+  left: 50px;
+}
+
+footer {
+  padding: 50px 0 30px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}
+
+footer .footer_info_area {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+footer .footer_info_area .campany_info,
+footer .footer_info_area .community_info,
+footer .footer_info_area .host_info,
+footer .footer_info_area .support_info {
+  width: 25%;
+  font-size: 0.9em;
+}
+
+footer .footer_info_area .campany_info h1,
+footer .footer_info_area .community_info h1,
+footer .footer_info_area .host_info h1,
+footer .footer_info_area .support_info h1 {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer .footer_info_area .campany_info ul li,
+footer .footer_info_area .community_info ul li,
+footer .footer_info_area .host_info ul li,
+footer .footer_info_area .support_info ul li {
+  list-style-type: none;
+  margin-bottom: 7px;
+  color: #777;
+}
+
+footer .credit_area {
+  width: 90%;
+  margin: 30px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+footer .credit_area .link_icon_area {
+  width: 30%;
+}
+
+footer .credit_area .link_icon_area .link_icon_item {
+  display: inline;
+  color: #000;
+  margin-right: 10px;
+}
+
+footer .credit_area .link_icon_area .link_icon_item .earth {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+footer .credit_area .link_icon_area .link_icon_item .fab {
+  font-size: 1.2em;
+}
+
+footer .credit_area .credit_info {
+  width: 70%;
+}
+
+footer .credit_area .credit_info .credit_info_item {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+footer .credit_area .credit_info .credit_info_item .site_info_link {
+  color: #555;
+}
+/*# sourceMappingURL=styles.css.map */

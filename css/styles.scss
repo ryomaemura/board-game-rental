@@ -1,0 +1,484 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #bbb;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+
+  .page_link_area {
+    display: inline-block;
+    margin: 0px 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .page_link {
+      color: #000;
+      line-height: 80px;
+      text-decoration: none;
+    }
+  }
+
+  .active_page_link_area {
+    border-bottom: 2px solid #22f;
+
+    .active_page_link {
+      color: #22f;
+    }
+  }
+
+  .start_btn_area {
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    top: 21px;
+  }
+}
+
+// ヘッダー一覧
+// 959px以下で表示
+.header_detail_area,
+.header_detail_open_icon,
+.header_detail_close_icon {
+  display: none;
+}
+
+// サイトアイコン
+.site_icon {
+  width: 50px;
+  height: 50px;
+  margin: 15px 20px 15px 30px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+// 新規登録モーダル・ログインモーダル
+.start_modal {
+  width: 600px;
+  margin-left: -300px;
+  padding: 0 60px;
+  border-radius: 20px;
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  z-index: 3;
+  background-color: #fefefe;
+
+// 新規登録モーダル・ログインモーダル共通CSSここから
+  .start_modal_head {
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid #eee;
+
+    .close_btn,
+    h1 {
+      line-height: 100px;
+    }
+
+    .close_btn {
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin: 0 auto;
+      font-size: 1.2em;
+    }
+  }
+
+  .regions,
+  .email_address,
+  .password,
+  .sign_up_btn,
+  .login_btn {
+    width: 100%;
+  }
+
+  .email_address,
+  .password {
+    margin-bottom: 5px;
+    padding: 3px 0;
+  }
+
+  .sign_up_btn,
+  .login_btn {
+    margin: 15px 0 5px;
+  }
+
+  .email_address_text,
+  .form_change_text,
+  .password_text {
+    font-size: 0.8em;
+  }
+
+  .form_change_text {
+    margin-bottom: 30px;
+
+    .form_change_btn {
+      border-bottom: 1px solid #444;
+      cursor: pointer;
+    }
+  }
+// 新規登録モーダル・ログインモーダル共通ここまで
+
+// 新規登録モーダル
+  .sign_up_modal {
+    .regions {
+      margin: 20px 0 10px;
+      padding: 5px 0;
+    }
+  }
+
+// ログインモーダル
+  .login_modal {
+    display: none;
+
+    .email_address_text,
+    .password_text {
+      margin: 10px 0 5px;
+    }
+
+    .password {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// モーダルウィンドウを表示した時に画面を半透明にするオーバーレイ
+#modal_overlay {
+  z-index: 2;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main_image_space {
+  .main_image_area {
+    width: 100%;
+    height: 500px;
+    margin-top: 80px;
+    background-color: #ddd;
+    background-image: url(../image/board-game.jpg);
+    background-size: cover;
+
+    .input_form_area {
+      width: 470px;
+      height: 400px;
+      padding: 20px;
+      background-color: #fff;
+      position: relative;
+      top: 50px;
+      left: 50px;
+      border-radius: 10px;
+
+      h1 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 1.2em;
+        margin-top: 40px;
+      }
+
+      .regions,
+      .users_number {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .start_btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.site_main_area {
+  width: 80%;
+  margin: 0 auto;
+
+  .site_info_head {
+    margin-bottom: 70px;
+    padding-top: 30px;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+    border-top: 1px solid;
+  }
+
+  .site_info_area {
+    margin: 50px auto 100px;
+    display: flex;
+
+    .site_info_item {
+      width: 40%;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: #777;
+        line-height: 2;
+      }
+    }
+  }
+
+  .step_area {
+    .site_info_item {
+      width: 30%;
+    }
+  }
+
+  .check_mark {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+  }
+
+  .user_feedback {
+    .text_area {
+      width: 40%;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 2em;
+        color: #555;
+      }
+
+      p {
+        color: #555;
+      }
+    }
+  }
+
+  .site_info_image {
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  .check_list_area {
+    .check_list {
+      ul {
+        li {
+          margin-bottom: 10px;
+          list-style-type: none;
+          color: #777;
+
+          .check_mark {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .eye_catch_area {
+    .site_info_image {
+      width: 100%;
+    }
+  }
+
+  .ques_area {
+    width: 90%;
+    display: block;
+
+    .ques_item {
+      width: 100%;
+      margin: 0 auto 5px;
+      padding: 10px 0;
+      border-bottom: 1px solid #999;
+      font-size: 1.1em;
+
+      .ques_item_head {
+        display: flex;
+        color: #333;
+        cursor: pointer;
+
+        p {
+          width: 95%;
+          padding-top: 20px;
+        }
+
+        .open_icon {
+          width: 5%;
+          font-size: 2em;
+          text-align: right;
+        }
+      }
+
+      .ques_answer {
+        margin: 20px 0;
+        display: none;
+        color: #777;
+      }
+    }
+  }
+
+  .service_detail_area {
+    .site_info_head {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 0 auto;
+      padding-top: 70px;
+    }
+
+    .site_info_area {
+      margin-top: 10px;
+
+      .site_info_item {
+        width: 30%;
+
+        .site_info_image {
+          width: 100%;
+          height: 180px;
+          margin-bottom: 15px;
+          object-fit: cover;
+        }
+
+        h1 {
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 3px;
+        }
+
+        p {
+          color: #777;
+          margin-bottom: 3px;
+        }
+
+        .detail_link {
+          color: #088;
+        }
+      }
+    }
+  }
+}
+
+.start_eye_catch_area {
+  width: 86%;
+  height: 320px;
+  margin: 0 auto 70px;
+  background-color: #088;
+  background-image: url(../image/chess4.jpg);
+  background-size: cover;
+
+  h1 {
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
+    left: 50px;
+  }
+
+  .start_btn {
+    position: relative;
+    top: 70px;
+    left: 50px;
+  }
+}
+
+footer {
+  padding: 50px 0 30px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+
+  .footer_info_area {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+
+    .campany_info,
+    .community_info,
+    .host_info,
+    .support_info {
+      width: 25%;
+      font-size: 0.9em;
+
+      h1 {
+        font-size: 0.9em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          list-style-type: none;
+          margin-bottom: 7px;
+          color: #777;
+        }
+      }
+    }
+  }
+
+  .credit_area {
+    width: 90%;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: row-reverse;
+
+    .link_icon_area {
+      width: 30%;
+
+      .link_icon_item {
+        display: inline;
+        color: #000;
+        margin-right: 10px;
+
+        .earth {
+          width: 16px;
+          height: 16px;
+          margin-right: 5px;
+        }
+
+        .fab {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    .credit_info {
+      width: 70%;
+
+      .credit_info_item {
+        margin: 0;
+        font-size: 0.9em;
+
+        .site_info_link {
+          color: #555;
+        }
+      }
+    }
+  }
+}

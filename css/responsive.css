@@ -1,0 +1,276 @@
+@media screen and (max-width: 959px) {
+  header {
+    background-color: transparent;
+    border-bottom: none;
+    position: absolute;
+  }
+  header .page_link_area,
+  header .start_btn_area {
+    display: none;
+  }
+  .fixed {
+    background-color: #fff;
+    border-bottom: 1px solid #bbb;
+    position: fixed;
+  }
+  .fixed .header_detail_open_icon {
+    display: none;
+  }
+  .fixed .page_link_area,
+  .fixed .start_btn_area {
+    display: inline-block;
+  }
+  .header_detail_area {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+  }
+  .header_detail_area .page_link_area {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  .header_detail_area .page_link_area .page_link {
+    color: #000;
+  }
+  .header_detail_area .active_page_link_area {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .header_detail_area .active_page_link_area .page_link {
+    color: #22f;
+  }
+  .site_icon {
+    border-radius: 20px;
+    margin-right: 5px;
+  }
+  .header_detail_open_icon,
+  .header_detail_close_icon {
+    display: inline;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .header_detail_close_icon {
+    color: #000;
+  }
+  .main_image_space {
+    height: 580px;
+  }
+  .main_image_space .main_image_area {
+    height: 320px;
+    margin-top: 0;
+    padding-top: 150px;
+  }
+  .main_image_space .main_image_area .input_form_area {
+    width: 80%;
+    margin: 0 auto;
+    position: static;
+    background: transparent;
+  }
+  .main_image_space .main_image_area .input_form_area h1 {
+    color: #fff;
+    margin-bottom: 70px;
+  }
+  .site_main_area {
+    width: 90%;
+  }
+  .site_main_area .site_info_area {
+    display: block;
+  }
+  .site_main_area .site_info_area .site_info_item {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .site_main_area .site_info_area .site_info_item h1 {
+    margin-bottom: 10px;
+  }
+  .site_main_area .site_info_head {
+    font-size: 2.5em;
+  }
+  .site_main_area .user_feedback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .site_main_area .user_feedback .text_area .check_mark {
+    width: 30px;
+    height: 30px;
+  }
+  .site_main_area .user_feedback .text_area h1 {
+    font-size: 1.2em;
+  }
+  .site_main_area .user_feedback .site_info_image {
+    width: 40%;
+    height: 300px;
+  }
+  .site_main_area .eye_catch_area {
+    width: 80%;
+  }
+  .site_main_area .eye_catch_area .site_info_image {
+    height: 400px;
+  }
+  .site_main_area .service_detail_area .site_info_area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .start_eye_catch_area {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 50px;
+  }
+  footer .footer_info_area {
+    padding-bottom: 0;
+    display: block;
+  }
+  footer .footer_info_area .campany_info,
+  footer .footer_info_area .community_info,
+  footer .footer_info_area .host_info,
+  footer .footer_info_area .support_info {
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  footer .footer_info_area .campany_info ul,
+  footer .footer_info_area .community_info ul,
+  footer .footer_info_area .host_info ul,
+  footer .footer_info_area .support_info ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer .footer_info_area .campany_info ul li,
+  footer .footer_info_area .community_info ul li,
+  footer .footer_info_area .host_info ul li,
+  footer .footer_info_area .support_info ul li {
+    width: 28%;
+    margin-right: 5%;
+  }
+  footer .footer_info_area .support_info {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  footer .credit_area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .credit_area .link_icon_area,
+  footer .credit_area .credit_info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fixed .start_btn_area .start_btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+  .main_image_space {
+    height: 470px;
+  }
+  .main_image_space .main_image_area {
+    height: 230px;
+    padding-top: 80px;
+  }
+  .main_image_space .main_image_area .input_form_area {
+    width: 100%;
+  }
+  .main_image_space .main_image_area .input_form_area h1 {
+    width: 90%;
+    margin: 0 auto 70px;
+    font-size: 1.5em;
+  }
+  .site_main_area {
+    width: 100%;
+  }
+  .site_main_area .site_info_area {
+    width: 90%;
+  }
+  .site_main_area .site_info_area .site_info_item {
+    width: 100%;
+  }
+  .site_main_area .site_info_head {
+    width: 90%;
+    margin: 0 auto 50px;
+    font-size: 2em;
+  }
+  .site_main_area .user_feedback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .site_main_area .user_feedback .text_area {
+    width: 100%;
+  }
+  .site_main_area .user_feedback .site_info_image {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .site_main_area .eye_catch_area .site_info_image {
+    height: 300px;
+  }
+  .site_main_area .service_detail_area {
+    width: 90%;
+  }
+  .site_main_area .service_detail_area .site_info_head {
+    margin: 0 auto 50px;
+    padding-top: 30px;
+  }
+  .site_main_area .service_detail_area .site_info_area {
+    display: block;
+  }
+  .site_main_area .service_detail_area .site_info_area .site_info_item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .start_eye_catch_area {
+    height: 300px;
+  }
+  .start_eye_catch_area h1 {
+    top: 30px;
+    left: 20px;
+    font-size: 2em;
+  }
+  .start_eye_catch_area .start_btn {
+    top: 50px;
+    left: 20px;
+  }
+  footer .footer_info_area {
+    padding-bottom: 0;
+  }
+  footer .footer_info_area .campany_info ul,
+  footer .footer_info_area .community_info ul,
+  footer .footer_info_area .host_info ul,
+  footer .footer_info_area .support_info ul {
+    display: block;
+  }
+  footer .footer_info_area .campany_info ul li,
+  footer .footer_info_area .community_info ul li,
+  footer .footer_info_area .host_info ul li,
+  footer .footer_info_area .support_info ul li {
+    width: 100%;
+  }
+  footer .footer_info_area .support_info {
+    margin-bottom: 0;
+  }
+  footer .credit_area .link_icon_area,
+  footer .credit_area .credit_info {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

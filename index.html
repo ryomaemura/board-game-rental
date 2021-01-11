@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="image/favicon.jpg">
+  <title>Board Game Rental</title>
+
+  <!-- Bootstrap読み込み -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- FontAwesomeの読み込み -->
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <img class="site_icon" src="image/dice.jpg" alt="サイコロ">
+    <span class="header_detail_open_icon">+</span>
+    <div class="page_link_area active_page_link_area">
+      <a href="#" class="page_link active_page_link">概要</a>
+    </div>
+    <div class="page_link_area">
+      <a href="#" class="page_link">ゲーム一覧</a>
+    </div>
+    <div class="page_link_area">
+      <a href="#" class="page_link">レンタルの流れ</a>
+    </div>
+    <div class="start_btn_area">
+      <button class="start_btn btn btn-primary">はじめる</button>
+    </div>
+  </header>
+
+  <!-- 959px以下のウィンドウでサイトアイコンの右の「+」マークを押すと表示 -->
+  <div class="header_detail_area">
+    <img class="site_icon" src="image/dice.jpg" alt="サイコロ">
+    <span class="header_detail_close_icon">×</span>
+    <div class="page_link_area active_page_link_area">
+      <a href="#" class="page_link active_page_link">概要</a>
+    </div>
+    <div class="page_link_area">
+      <a href="#" class="page_link">ゲーム一覧</a>
+    </div>
+    <div class="page_link_area">
+      <a href="#" class="page_link">レンタルの流れ</a>
+    </div>
+  </div>
+
+  <!-- start_btnのモーダルウィンドウ -->
+  <div class="start_modal">
+    <!-- 新規登録モーダルウィンドウ -->
+    <div class="sign_up_modal">
+      <div class="start_modal_head">
+        <span class="close_btn">×</span>
+        <h1 class="sign_up_head">新規登録</h1>
+      </div>
+      <select class="regions" name="regions" id="">
+        <option value="hokkaido">北海道</option>
+        <option value="tohoku">東北</option>
+        <option value="kanto" selected>関東</option>
+        <option value="chubu">中部</option>
+        <option value="kinki">近畿</option>
+        <option value="chugoku">中国</option>
+        <option value="sikoku">四国</option>
+        <option value="kyushu">九州</option>
+      </select>
+      <input class="email_address" type="text" placeholder="メールアドレス">
+      <p class="email_address_text">このフォームに入力するだけでは仮登録の状態です。登録後に入力されたメールアドレスに本登録URLを送ります。</p>
+      <button class="sign_up_btn btn btn-primary">登録する</button>
+      <p class="form_change_text">すでにアカウントをお持ちですか？ <span class="form_change_btn form_change_login">ログイン</span></p>
+    </div>
+    <!-- ログインモーダルウィンドウ -->
+    <div class="login_modal">
+      <div class="start_modal_head">
+        <span class="close_btn">×</span>
+        <h1 class="login_head">ログイン</h1>
+      </div>
+      <p class="email_address_text">登録したアカウントのメールアドレスを入力して下さい</p>
+      <input class="email_address" type="text" placeholder="メールアドレス">
+      <p class="password_text">登録したアカウントのパスワードを入力して下さい</p>
+      <input class="password" type="password" placeholder="パスワード">
+      <button class="login_btn btn btn-primary">ログイン</button>
+      <p class="form_change_text">初めてアカウントを登録しますか？ <span class="form_change_btn form_change_sign_up">新規登録</span></p>
+    </div>
+  </div>
+
+  <!-- モーダルウィンドウを表示した時に画面を半透明にするオーバーレイ -->
+  <div id="modal_overlay"></div>
+
+  <div class="main_image_space">
+    <div class="main_image_area">
+      <div class="input_form_area">
+        <h1>たくさんのボードゲームを<br>レンタルできる<br>1個500円からレンタル可能</h1>
+        <h2>地域と遊ぶ人数を記入</h2>
+        <!-- <input class="region_form" type="text" value="東京"> -->
+        <select class="regions" name="regions" id="">
+          <option value="hokkaido">北海道</option>
+          <option value="tohoku">東北</option>
+          <option value="kanto" selected>関東</option>
+          <option value="chubu">中部</option>
+          <option value="kinki">近畿</option>
+          <option value="chugoku">中国</option>
+          <option value="sikoku">四国</option>
+          <option value="kyushu">九州</option>
+        </select>
+        <select class="users_number" name="users">
+          <option value="user1">1人</option>
+          <option value="user2">2人</option>
+          <option value="user3">3人</option>
+          <option value="user4">4人</option>
+          <option value="user5">5人以上</option>
+        </select>
+        <button class="start_btn btn btn-primary">ボードゲームを探す</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="site_main_area">
+
+    <div class="site_info_area">
+      <div class="site_info_item">
+        <h1>圧倒的なコスパの良さ</h1>
+        <p>ボードゲームを普通に買うと2000円〜3000円。「買ったけど結局1回しか遊ばなかった」そんな経験はありませんか？ボドゲレンタルなら安い値段で遊べます。</p>
+      </div>
+      <div class="site_info_item">
+        <h1>豊富なラインナップ</h1>
+        <p>ボドゲレンタルでは100種類以上のボードゲームを用意しています。遊ぶ日の人数に合わせて色々な種類のボードゲームをレンタルできます。</p>
+      </div>
+    </div>
+
+    <h1 class="site_info_head">3ステップでレンタル可能</h1>
+
+    <div class="site_info_area step_area">
+      <div class="site_info_item">
+        <img class="check_mark" src="image/check-mark1.png" alt="チェックマーク">
+        <h1>100種類以上のボドゲが選び放題</h1>
+        <p>様々なジャンルのボードゲームを集めています。あなたの好きなボドゲが必ず見つかります。</p>
+      </div>
+      <div class="site_info_item">
+        <img class="check_mark" src="image/check-mark1.png" alt="チェックマーク">
+        <h1>最短で翌日に届く</h1>
+        <p>レンタル予約をしたら1週間以内に発送します。発送日の指定も可能です。</p>
+      </div>
+      <div class="site_info_item">
+        <img class="check_mark" src="image/check-mark1.png" alt="チェックマーク">
+        <h1>コンビニで簡単に返却</h1>
+        <p>返却は近くのコンビニに返すだけ。大変な返送作業はいりません。</p>
+      </div>
+    </div>
+
+    <div class="site_info_area user_feedback">
+      <div class="text_area">
+        <img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">
+        <h1>今までは購入してボードゲームを遊んでいたんですが、レンタルだと色々な種類のゲームに触れられるので、買うより安い値段で遊べて重宝しています。</h1>
+        <p>レンタルならではの良さが好評をいただいています</p>
+      </div>
+      <img class="site_info_image" src="image/chess.jpg" alt="チェスを行う人">
+    </div>
+
+    <h1 class="site_info_head">色々な状況で活躍します</h1>
+
+    <div class="site_info_area check_list_area">
+      <div class="site_info_item">
+        <p>日本全国どこでも対応しています。購入する5分の1の値段でボードゲームを遊ぶ事が可能です。100種類以上のボードゲームを取り揃えていて、プレイ人数やゲームジャンルに応じて最適なゲームが見つかります。レンタルしたボードゲーム、お気に入りのボードゲームなどブラウザとアプリで一覧管理できます。</p>
+      </div>
+      <div class="site_info_item check_list">
+        <ul>
+          <li><img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">大人数が集まるパーティーがあるから、大きいボードゲームを用意したい</li>
+          <li><img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">家族で楽しめるパーティーゲームがやりたい</li>
+          <li><img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">2人で全力で遊べる戦略ゲームをやりたい</li>
+          <li><img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">やったことない未知のゲームを探したい</li>
+          <li><img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">買うと高い大きめのボードゲームを試したい</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site_info_area eye_catch_area">
+      <img class="site_info_image" src="image/board-game2.jpg" alt="チェスをプレイする人">
+    </div>
+
+    <h1 class="site_info_head">ボドゲレンタルの特徴</h1>
+
+    <div class="site_info_area step_area">
+      <div class="site_info_item">
+        <h1>サイト上でレンタルするゲームを選択</h1>
+        <p>ジャンル別、人数別、人気順など様々な方法で100種類以上のボードゲームから、あなたにぴったりのボードゲームが探せます。</p>
+      </div>
+      <div class="site_info_item">
+        <h1>AIがオススメ商品をレコメンド</h1>
+        <p>好みのジャンルや今までの履歴からAIがあなたにオススメのボードゲームを判断します。</p>
+      </div>
+      <div class="site_info_item">
+        <h1>5000円以上のレンタルで送料が無料</h1>
+        <p>1回の取引で5000円以上のボードゲームをレンタルする場合は送料が無料になります。</p>
+      </div>
+    </div>
+
+    <div class="user_feedback site_info_area">
+      <img class="site_info_image" src="image/chess2.jpg" alt="チェス">
+      <div class="text_area">
+        <img class="check_mark" src="image/check-mark2.png" alt="チェックマーク">
+        <h1>ボドゲレンタルで遊んでから購入するようになって、ハズレのボードゲームを買うことが無くなった。本当に面白いボードゲームだけを選択できる。</h1>
+        <p>購入前に商品の良し悪しを判断するのにも利用されています</p>
+      </div>
+    </div>
+
+    <h1 class="site_info_head">レンタル作業について</h1>
+
+    <div class="site_info_area">
+      <div class="site_info_item">
+        <h1>1週間以内に自宅に配達します</h1>
+        <p>サイト上で商品を選んでから1週間以内に自宅に配達します。配達日時を指定する事も可能です。</p>
+      </div>
+      <div class="site_info_item">
+        <h1>返却はコンビニで</h1>
+        <p>ボードゲームを遊んだ後はレンタル期限内にお近くのコンビニに返却して下さい。大変な返送作業はいりません。</p>
+      </div>
+    </div>
+
+    <h1 class="site_info_head">よくある質問</h1>
+
+    <div class="site_info_area ques_area">
+      <div class="ques_item">
+        <div class="ques_item_head">
+          <p href="#">どのくらいの種類のボードゲームがありますか？</p>
+          <span class="open_icon">+</span>
+        </div>
+        <p class="ques_answer">100種類以上のボードゲームを用意しています。ジャンル別、人数別、人気順、新着順など色々な検索であなたにあったボードゲームを探す事ができます。</p>
+      </div>
+      <div class="ques_item">
+        <div class="ques_item_head">
+          <p href="#">どのくらいの時間で届きますか？</p>
+          <span class="open_icon">+</span>
+        </div>
+        <p class="ques_answer">最速で翌日に届きます。最大でも7日以内には配達します。日時指定は21日以内で配達可能な日を指定できます。</p>
+      </div>
+      <div class="ques_item">
+        <div class="ques_item_head">
+          <p href="#">キャンセルはできますか？</p>
+          <span class="open_icon">+</span>
+        </div>
+        <p class="ques_answer">配達予定日時(レンタル予約した際に表示されます)の前日23:59までであれば無料でキャンセルが可能です。</p>
+      </div>
+      <div class="ques_item">
+        <div class="ques_item_head">
+          <p href="#">送料はいくらですか？</p>
+          <span class="open_icon">+</span>
+        </div>
+        <p class="ques_answer">レンタルするボードゲームの合計の箱のサイズで決まります。小サイズは一律400円。中サイズは一律700円。大サイズは一律1000円です。ただし合計の値段が5000円以上の場合は送料は無料になります。</p>
+      </div>
+      <div class="ques_item">
+        <div class="ques_item_head">
+          <p href="#">一回でいくつまでレンタルできますか？</p>
+          <span class="open_icon">+</span>
+        </div>
+        <p class="ques_answer">ダンボールのサイズに入る大きさならいくつでもレンタル可能です。ダンボールが2つ以上になる場合はその個数分値段がかかります。</p>
+      </div>
+    </div>
+
+    <div class="service_detail_area">
+      <h1 class="site_info_head">ボドゲレンタルの詳細はこちら</h1>
+      <div class="site_info_area">
+
+        <div class="site_info_item">
+          <img class="site_info_image" src="image/chess3.jpg" alt="チェス">
+          <h1>ゲーム一覧</h1>
+          <p>レンタル可能なボードゲーム</p>
+          <a href="#" class="detail_link">もっと詳しく</a>
+        </div>
+
+        <div class="site_info_item">
+          <img class="site_info_image" src="image/board-game3.jpg" alt="ボードゲーム">
+          <h1>レンタルの流れ</h1>
+          <p>サイトで注文してから配送、返却まで</p>
+          <a href="#" class="detail_link">もっと詳しく</a>
+        </div>
+
+        <div class="site_info_item">
+          <img class="site_info_image" src="image/board-game4.jpg" alt="ボードゲーム">
+          <h1>過去のユーザーの声</h1>
+          <p>実際に利用した人の感想</p>
+          <a href="#" class="detail_link">もっと詳しく</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="start_eye_catch_area">
+    <h1>レンタル始めませんか？</h1>
+    <button class="start_btn btn btn-primary">はじめる</button>
+  </div>
+
+  <footer>
+    <div class="footer_info_area">
+
+      <div class="campany_info">
+        <h1>企業情報</h1>
+        <ul>
+          <li>ボドゲレンタルのご利用方法</li>
+          <li>ニュース一覧</li>
+          <li>採用情報</li>
+          <li>企業情報1</li>
+          <li>企業情報2</li>
+          <li>企業情報3</li>
+          <li>企業情報4</li>
+          <li>企業情報5</li>
+        </ul>
+      </div>
+
+      <div class="community_info">
+        <h1>コミュニティ</h1>
+        <ul>
+          <li>コミュニティ1</li>
+          <li>コミュニティ2</li>
+          <li>コミュニティ3</li>
+          <li>コミュニティ4</li>
+        </ul>
+      </div>
+
+      <div class="host_info">
+        <h1>レンタル企業</h1>
+        <ul>
+          <li>ボードゲームを掲載</li>
+          <li>ボードゲーム情報1</li>
+          <li>ボードゲーム情報2</li>
+          <li>ボードゲーム情報3</li>
+          <li>ボードゲーム情報4</li>
+          <li>ボードゲーム情報5</li>
+          <li>ボードゲーム情報6</li>
+          <li>ボードゲーム情報7</li>
+        </ul>
+      </div>
+
+      <div class="support_info">
+        <h1>サポート</h1>
+        <ul>
+          <li>新型コロナウイルスの対策情報</li>
+          <li>カスタマーサポート</li>
+          <li>キャンセルオプション</li>
+          <li>信頼性&安全性情報</li>
+          <li>よくある質問</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="credit_area">
+
+      <div class="link_icon_area">
+        <p href="#" class="link_icon_item"><img class="earth" src="image/earth.png" alt="地球">SNSリンク</p>
+        <a href="#" class="link_icon_item"><span class="fab fa-facebook-f"></span></a>
+        <a href="#" class="link_icon_item"><span class="fab fa-twitter"></span></a>
+        <a href="#" class="link_icon_item"><span class="fab fa-instagram"></span></a>
+      </div>
+
+      <div class="credit_info">
+        <p class="credit_info_item">Board Game Rental</p>
+        <p class="credit_info_item">©ryomaemura</p>
+        <p class="credit_info_item">
+          <a href="#" class="site_info_link">プライバシー</a>・
+          <a href="#" class="site_info_link">利用規約</a>・
+          <a href="#" class="site_info_link">サイトマップ</a>・
+          <a href="#" class="site_info_link">企業情報</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Bootstrap読み込み -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <!-- jQueryの読み込み -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
